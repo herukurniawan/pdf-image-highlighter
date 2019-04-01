@@ -27,7 +27,7 @@ for i in data:
 data = out
 
 # Information
-print("The text is: ")
+print("The text extraction result is: ")
 print(text)
-print("Data: ")
+print("\nData: ")
 print("\n".join(data))
