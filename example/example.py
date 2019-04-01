@@ -13,10 +13,10 @@ image = Image.open(imagepath)
 width, height = image.size
 
 # Simple image to string, the converted text is in english language.
-text = pyt.image_to_string(image, lang='eng')
+text = pyt.image_to_string(image, lang='eng', config='--psm 6 --oem 1')
 
 # Get data and normalize
-data = pyt.image_to_data(image)
+data = pyt.image_to_data(image, lang='eng', config='--psm 6 --oem 1')
 data = [i.replace("\t",";") for i in data.split("\n")]
 data.pop(0)
 out = []
