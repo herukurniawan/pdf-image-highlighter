@@ -1,3 +1,5 @@
 # PDF-Image Highlighter
+I am making a highlighter for a group of image in PDF files. It is a long journey.
 
-We have to make a highlighter for a group of image in PDF files, it is a long journey to do.
+## The dependencies
+-- Unavailable right now
