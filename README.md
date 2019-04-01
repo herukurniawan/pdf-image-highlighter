@@ -1,5 +1,5 @@
 # PDF-Image Highlighter
-I am making a highlighter for a group of image in PDF files. It is a long journey.
+I am making a highlighter for a group of image in a PDF file. It is a long journey.
 
 ### Prerequisites
 * Install Google tesseract in your PC. Follow the installation tutorial [here](https://github.com/tesseract-ocr/tesseract/wiki#installation). I am using `tesseract` with configuration `--psm 3 --oem 1` (**LSTM model** and made for **small text detection**). To install `tesseract` in Ubuntu machine:
@@ -8,15 +8,15 @@ sudo apt install tesseract-ocr
 sudo apt install libtesseract-dev
 ````
 * Python 3.x.
-* You will need to install PIL (Python Image Library).
+* You will need to install `pillow` for PIL.
 ````
 pip install pillow
 ````
-* Install pytesseract.
+* Install `pytesseract`.
 ````
 pip install pytesseract
 ````
-* You need to install `pdf2image` for pdf to image conversion.
+* You need to install `pdf2image` for pdf to image converter.
 ````
 pip install pdf2image
 ````
