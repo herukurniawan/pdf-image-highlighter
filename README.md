@@ -16,6 +16,10 @@ pip install pillow
 ````
 pip install pytesseract
 ````
+* You need to install `pdf2image` for pdf to image conversion.
+````
+pip install pdf2image
+````
 ### Example
 
 I made some example! I placed my example files in `example` directory. First, change your active directory to `example`.
