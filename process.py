@@ -16,20 +16,26 @@ class pdf2bbox:
 
         # Open image, get the width and height of the image
         self.image = Image.open(imagepath)
+
+        # Get image width and height
         self.width, self.height = self.image.size
         
         # Simple image to string, the converted text in english language.
         self.text = pyt.image_to_string(self.image, lang=self.lang, config=self.config)
 
-        # Get data and normalize
-        self.prepare()
-        
-    
-    def prepare(self):
+        # Convert image to data
         data = pyt.image_to_data(self.image, lang='eng', config='--psm 6 --oem 1')
+
+        # Data normalize
         self.data = [i.replace("\t",";") for i in data.split("\n")]
+
+        # Get header and exclude it from the data
         self.header = self.data.pop(0)
+
+        # Discard empty data
         self.filterdata()
+
+        # All terms properties in data is converted to bounding box
         self.data = [self.data2bbox(i) for i in self.data]
 
 
