@@ -62,3 +62,8 @@ python process.py example/textimage.png
 ![Image](example/textimage.png)
 3. You will see the result of text detection process according to the sentences that you put inside `soe`.
 ![Result](output/result.png)
+
+### My upcoming updates
+My next plan for this project is:
+* Read pdf file, convert it to a pile of images and detect the defined soe texts inside it.
+* I planned to make a web service from this project by using Flask.
