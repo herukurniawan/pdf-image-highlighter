@@ -2,7 +2,7 @@
 I am making a highlighter for a group of image in a PDF file. It is a long journey.
 
 ### Prerequisites
-* Install Google tesseract in your PC. Follow the installation tutorial [here](https://github.com/tesseract-ocr/tesseract/wiki#installation). I am using `tesseract` with configuration `--psm 3 --oem 1` (**LSTM model** and made for **small text detection**). To install `tesseract` in Ubuntu machine:
+* Install Google tesseract in your PC. Follow the installation tutorial [here](https://github.com/tesseract-ocr/tesseract/wiki#installation). This project used `tesseract` with configuration `--psm 3 --oem 1` (**LSTM model** and made for **small text detection**). To install `tesseract` in Ubuntu machine:
 ````
 sudo apt install tesseract-ocr
 sudo apt install libtesseract-dev
