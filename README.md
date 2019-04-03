@@ -66,4 +66,4 @@ python process.py example/textimage.png
 ### My upcoming updates
 My next plan for this project is:
 * Read pdf file, convert it to a pile of images and detect the defined soe texts inside it.
-* I planned to make a web service from this project by using Flask.
+* I planned to make an API of this project by using Flask.
