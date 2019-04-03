@@ -8,19 +8,14 @@ sudo apt install tesseract-ocr
 sudo apt install libtesseract-dev
 ````
 * Python 3.x.
-* You will need to install `pillow` for PIL.
+* You will need to install `pillow`, `pytesseract`, `pdf2image` and `textdistance`.
 ````
 pip install pillow
-````
-* Install `pytesseract`.
-````
 pip install pytesseract
-````
-* You need to install `pdf2image` for pdf to image converter.
-````
 pip install pdf2image
+pip install textdistance
 ````
-### Example
+### Example #1: Detect and read the text.
 
 I made some example! I placed my example files in `example` directory. First, change your active directory to `example`.
 ````
@@ -52,3 +47,18 @@ Data:
 5;1;1;1;2;1;7;43;64;13;90;Sub-BU:
 ...
 ````
+
+### Example #2: Highlight text in an image
+In this example, I am trying to highlight a spesific text inside an image. Do the following steps to try it:
+1. You can specify the text that you want to search in the image by changing the `soe` variable located at line 128 on `process.py`. Feel free to change `soe` value. By default, i put my `soe` with some sentences like **salta** and **El zorro**. That means, I want to search those sentences inside the given image.
+````
+soe = ["salta","El zorro"]
+````
+2. Run `process.py` followed by the path of the image that you want to detect.
+````
+# python process.py <image_path>
+python process.py example/textimage.png
+````
+![Image](example/textimage.png)
+3. You will see the result of text detection process according to the sentences that you put inside `soe`.
+![Result](output/result.png)
