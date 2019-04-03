@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageDraw
 import pytesseract as pyt
 from textdistance import hamming
 import sys
@@ -115,14 +115,34 @@ class pdf2bbox:
             result['bottom'] = self.height - (int(stop[7]) + int(stop[9]))
         return(result)
 
-soe = "aspammer@website.com is spam"
+def result2xy(result, mode=True):
+    xy = dict()
+    xy['x1'] = result['left']
+    xy['y1'] = result['top']
+    xy['x2'] = result['pageWidth'] - result['right']
+    xy['y2'] = result['pageHeight'] - result['bottom']
+    if mode:
+        return ((xy["x1"],xy["y1"]),(xy["x2"],xy["y2"]))
+    return xy
+
+soe = ["salta","El zorro"]
+
 image_path = [sys.argv[1]]
 cnt = 1
 result = []
 for i in image_path:
     pdfb = pdf2bbox(i)
     pdfb.page = cnt
-    pdfb.search(soe)
+    for j in soe:
+        pdfb.search(j)
     result += pdfb.result
     cnt = cnt + 1
-print(result)
+
+#Draw test
+base = Image.open(image_path[0]).convert('RGBA')
+tmp = Image.new('RGBA', base.size, (0,0,0,0))
+d = ImageDraw.Draw(tmp)
+for i in result:
+    d.rectangle(result2xy(i),fill=(120,75,75,120),outline=None)
+base = Image.alpha_composite(base, tmp)
+base.convert("RGB").show()
